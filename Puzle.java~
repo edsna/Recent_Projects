@@ -1,0 +1,23 @@
+public class Puzzle{
+
+public static void breathFirst(){
+		int totalMoves = 0;
+		int totalSearchTrees = 0;
+		while(!Q.isEmpty()){						//while queue is not empty
+    				EmptyTile(boardArr);					//find empty tile
+    				Q.remove(Actions(boardArr, new ArrayList<Integer>()));	//remove from queue
+    				//Actions(boardArr, new ArrayList<Integer>());		//return actionsL
+				if(stateChecker(boardArr, GoalState)){			//if its equal to goal state
+					executeActions(boardArr, actionsList);		//return board with executed actions
+				}else{
+					actionsList = Q.addAll(goalTest);		//Add actions to queue
+				}
+    			}
+    			PrintState(boardArr);
+}
+
+public static void main(String[]args){
+
+			
+	}
+}
